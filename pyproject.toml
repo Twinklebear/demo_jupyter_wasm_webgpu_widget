@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "demo_jupyter_wasm_webgpu_widget"
+description = "A Custom Jupyter Widget Library"
+readme = "README.md"
+license = { file = "LICENSE.md" }
+authors = [{ name = "Will Usher", email = "will@willusher.io" }]
+keywords = ["IPython", "Jupyter", "Widgets"]
+dependencies = ["anywidget"]
+version = "0.1.0.dev0"
+
+[project.urls]
+Homepage = "https://github.com/Twinklebear/demo_jupyter_wasm_webgpu_widget"
+
+[tool.hatch.build]
+only-packages = true
+artifacts = ["demo_jupyter_wasm_webgpu_widget/static/*"]
+
+[tool.hatch.build.hooks.jupyter-builder]
+build-function = "hatch_jupyter_builder.npm_builder"
+ensured-targets = ["demo_jupyter_wasm_webgpu_widget/static/widget.js"]
+skip-if-exists = ["demo_jupyter_wasm_webgpu_widget/static/widget.js"]
+dependencies = ["hatch-jupyter-builder>=0.5.0"]
+
+[tool.hatch.build.hooks.jupyter-builder.build-kwargs]
+npm = "pnpm"
+build_cmd = "build"

@@ -2,9 +2,12 @@
 
 This is built using [anywidet](https://github.com/manzt/anywidget)
 to simplify packaging and distribution. You can try out
-a live demo running in [Google Colab]()
-or download the repo, `pip install demo_jupyter_wasm_webgpu_widget` and
+a live demo running in [Google Colab](https://colab.research.google.com/drive/11cGGKf6egHNVZ3Ih6j8R6vLA7ylN_-Mw?usp=sharing)
+or download the repo, `pip install demo-jupyter-wasm-webgpu-widget` and
 run the example in ./example/demo.ipynb.
+
+<img width="2556" alt="Screenshot 2025-04-08 at 9 33 00 PM" src="https://github.com/user-attachments/assets/67b8d0b9-6d1b-4bc4-9d45-b050320de83c" />
+
 
 # Dependencies
 

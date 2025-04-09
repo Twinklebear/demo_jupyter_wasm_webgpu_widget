@@ -25,7 +25,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@twinklebear/webgpu_cpp_gltf": "^0.2.0"
+    "@twinklebear/webgpu_cpp_gltf": "^0.2.1"
   },
   "pnpm": {
     "overrides": {}

@@ -15,8 +15,9 @@
   "scripts": {
     "typecheck": "tsc",
     "copy_wasm": "cp node_modules/@twinklebear/webgpu_cpp_gltf/*.wasm ./demo_jupyter_wasm_webgpu_widget/static/",
-    "build": "pnpm run clean && esbuild ts/widget.ts --format=esm --bundle --outdir=demo_jupyter_wasm_webgpu_widget/static && pnpm run copy_wasm",
-    "clean": "rm -f demo_jupyter_wasm_webgpu_widget/static/widget.js demo_jupyter_wasm_webgpu_widget/static/*.wasm"
+    "bundle": "esbuild ./ts/widget.ts --format=esm --inject:./ts/current_script.js  --bundle --outdir=demo_jupyter_wasm_webgpu_widget/static",
+    "clean": "rm -f demo_jupyter_wasm_webgpu_widget/static/widget.js demo_jupyter_wasm_webgpu_widget/static/*.wasm",
+    "build": "pnpm run clean && pnpm run bundle && pnpm run copy_wasm"
   },
   "devDependencies": {
     "@anywidget/types": "^0.2.0",
@@ -25,7 +26,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@twinklebear/webgpu_cpp_gltf": "^0.2.1"
+    "@twinklebear/webgpu_cpp_gltf": "^0.2.3"
   },
   "pnpm": {
     "overrides": {}
